@@ -26,5 +26,10 @@ public class CursoController {
     List<Curso> buscarTodos(){
         return cursoService.buscarTodos();
     }
+    
+    @PutMapping("/{id}")
+    public Curso editarCurso(@RequestBody CursoDTO cursoDTO, @PathVariable Long id){
+        return cursoService.atualizarCurso(cursoDTO, id);
+    }
 
 }
